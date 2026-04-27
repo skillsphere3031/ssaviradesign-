@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<title>How It Works</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+}
+/* NAVBAR MAIN */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* ROUNDED CONTAINER */
+.nav-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  background: #f5f2ee;
+  border-radius: 50px;
+  padding: 15px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;   /* 🔥 PERFECT CIRCLE */
+  object-fit: cover;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6b4f3b; /* premium brown tone */
+  letter-spacing: 1px;
+}
+.logo-subline {
+  font-size: 11px;
+  color: #a89a8c;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.logo-text-group {
+  display: flex;
+  flex-direction: column;   /* 🔥 makes text go DOWN */
+  justify-content: center;
+  line-height: 1.2;
+}
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4a3f35;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav-links a:hover {
+  color: #c8a97e;
+}
+
+/* ACTIVE LINK */
+.nav-links .active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #c8a97e;
+}
+
+/* BUTTON */
+.nav-btn a {
+  text-decoration: none;
+  background: #c8a97e;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-btn a:hover {
+  background: #a8845d;
+}
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #c9a36d;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #c9a36d;
+  transition: 0.3s;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* HEADING */
+.heading{
+  text-align:center;
+  margin-bottom:60px;
+}
+.heading h1{
+  font-size:34px;
+}
+.heading p{
+  color:#777;
+}
+
+/* ROW */
+.process-row{
+  display:flex;
+  align-items:center;
+  gap:60px;
+  margin-bottom:80px;
+}
+
+.process-row.reverse{
+  flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.process-img img{
+  width:100%;
+  max-width:520px;
+  border-radius:10px;
+}
+
+/* CONTENT */
+.process-content{
+  flex:1;
+}
+
+.process-content h2{
+  font-size:26px;
+  margin-bottom:20px;
+}
+
+/* TIMELINE STYLE */
+.timeline{
+  position:relative;
+  padding-left:20px;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:8px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#ddd;
+}
+
+.point{
+  position:relative;
+  margin-bottom:25px;
+  padding-left:25px;
+}
+
+.point::before{
+  content:'';
+  position:absolute;
+  left:-1px;
+  top:6px;
+  width:10px;
+  height:10px;
+  background:#555;
+  border-radius:50%;
+}
+
+.point h4{
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.point p{
+  color:#555;
+  font-size:14px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  border:1px solid #c9a36d;
+  color:#c9a36d;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .process-row{
+    flex-direction:column;
+    text-align:center;
+  }
+  .process-row.reverse{
+    flex-direction:column;
+  }
+  .timeline{
+    padding-left:0;
+  }
+  .timeline::before{
+    display:none;
+  }
+  .point{
+    padding-left:0;
+  }
+  .point::before{
+    display:none;
+  }
+}
+.top-cta {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+.top-cta a {
+  background: #c9a36d;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.team-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  max-width: 280px;
+}
+
+/* ICON STYLE */
+.icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+}
+
+/* MATCHING COLORS */
+.icon.design {
+  background: #ffe5e5;
+  color: #ff6b6b;
+}
+
+.icon.business {
+  background: #fff1e6;
+  color: #ff8c42;
+}
+
+.icon.project {
+  background: #ffecec;
+  color: #ff4d4d;
+}
+
+/* TEXT */
+.team-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+.footer {
+  background: #2f2a2a;
+  color: #ddd;
+  padding: 60px 40px 20px;
+}
+
+/* GRID LAYOUT */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* BRAND */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+.footer-brand h3 {
+  color: #c9a36a;
+  margin: 0;
+}
+
+.footer-brand p {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* HEADINGS */
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* LINKS */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #c9a36a;
+}
+
+/* SOCIALS */
+.socials {
+  margin-top: 15px;
+}
+
+.socials a {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 14px;
+}
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #1ebe5d;
+}
+.whatsapp-float {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+</style>
+</head>
+
+<body>
+  <header class="navbar">
+  <div class="nav-wrapper">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- LEFT DECOR + LOGO -->
+    <div class="logo-section">
+  <img src="images/logo2.jpeg" class="logo" alt="logo">
+
+  <div class="logo-text-group">
+    <span class="logo-text">SS Avira Design</span>
+    <span class="logo-subline">Your space, our designs</span>
+  </div>
+</div>
+
+    <!-- CENTER LINKS -->
+    <nav class="nav-links" id="navLinks">
+     <a href="index.html">Home</a>
+     <a href="index.html#about">About</a>
+     <a href="index.html#our-designs">Our Designs</a>
+     <a href="howitworks.html" class="active">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- RIGHT BUTTON -->
+   <div class="nav-btn">
+  <a href="https://wa.me/918792570652?text=Hi%20I%20am%20interested%20in%20interior%20design%20consultation" target="_blank">
+    Book Consultation →
+  </a>
+</div>
+
+  </div>
+</header>
+<script>
+const navLinks = document.querySelectorAll('.nav-links a');
+
+// Get current page file name
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+  const linkPage = link.getAttribute("href");
+
+  // Match page
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+
+  // Click behavior (for same-page links like #about)
+  link.addEventListener('click', function () {
+    navLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+
+<section class="hero">
+<div class="container">
+
+  <!-- HEADING -->
+  <div class="heading">
+    <h1>Your dream home in 5 steps!</h1>
+    <p>Simple process to design your perfect home</p>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="process-row">
+    <div class="process-img">
+      <img src="images/step1.jpg">
+    </div>
+    <div class="process-content">
+      <h2>Meet your designer</h2>
+
+      <div class="timeline">
+        <div class="point">
+          <h4>It all begins with a form</h4>
+          <p>Tell us about your needs so we can understand your vision.</p>
+          <a href="#" class="btn">Fill your form</a>
+        </div>
+
+        <div class="point">
+          <h4>Get free consultation</h4>
+          <p>Discuss your ideas with our expert designers.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="process-row reverse">
+    <div class="process-img">
+      <img src="images/step2.jpg">
+    </div>
+    <div class="process-content">
+      <h2>Book SS Avira Design</h2>
+
+      <div class="timeline">
+        <div class="point">
+          <h4>Pay booking amount</h4>
+          <p>Secure your project by confirming your booking.</p>
+        </div>
+
+        <div class="point">
+          <h4>Finalize design</h4>
+          <p>Choose materials, colors, and layouts.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="process-row">
+    <div class="process-img">
+      <img src="images/step3.jpg">
+    </div>
+    <div class="process-content">
+      <h2>Execution begins</h2>
+
+      <div class="timeline">
+        <div class="point">
+          <h4>Work starts</h4>
+          <p>Our team begins building your dream home.</p>
+        </div>
+
+        <div class="point">
+          <h4>Track progress</h4>
+          <p>Stay updated with project milestones.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="process-row reverse">
+    <div class="process-img">
+      <img src="images/step4.jpg">
+    </div>
+    <div class="process-content">
+      <h2>Final installation</h2>
+
+      <div class="timeline">
+        <div class="point">
+          <h4>Material dispatch</h4>
+          <p>Final materials are delivered to your site.</p>
+        </div>
+
+        <div class="point">
+          <h4>Installation</h4>
+          <p>Everything is installed perfectly.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<div class="process-row">
+  <div class="process-img">
+    <img src="images/step5.jpg">
+  </div>
+
+  <div class="process-content">
+    <h2>Move in!</h2>
+
+    <div class="timeline">
+      <div class="point">
+        <h4>Project completed</h4>
+        <p>Your dream home is fully ready with perfect finishing.</p>
+      </div>
+
+      <div class="point">
+        <h4>Start your new life</h4>
+        <p>Enjoy your beautifully designed home with your family.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="top-cta">
+  <a href="https://wa.me/918792570652?text=Hi I want interior design consultation" target="_blank">
+    Start Your Project →
+  </a>
+</div>
+<section class="team-section">
+  <h2>The Team</h2>
+  <p class="team-sub">
+    Get to know the team that'll be with you every step of the way.
+  </p>
+
+  <div class="team-container">
+
+    <!-- DESIGN LEAD -->
+    <div class="team-card">
+      <div class="icon design">
+        <i class="bi bi-person"></i>
+      </div>
+      <h3>The Design Lead (DL)</h3>
+      <p>
+        The Design Lead gets to know your requirements and your lifestyle 
+        to ensure your home reflects who you are.
+      </p>
+    </div>
+
+    <!-- BUSINESS MANAGER -->
+    <div class="team-card">
+      <div class="icon business">
+        <i class="bi bi-briefcase"></i>
+      </div>
+      <h3>The Business Manager (BM)</h3>
+      <p>
+        Oversees the entire process and ensures smooth execution without delays.
+      </p>
+    </div>
+
+    <!-- PROJECT MANAGER -->
+    <div class="team-card">
+      <div class="icon project">
+        <i class="bi bi-gear"></i>
+      </div>
+      <h3>The Project Manager (PM)</h3>
+      <p>
+        Manages on-site execution and ensures timely delivery of your home.
+      </p>
+    </div>
+
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col brand">
+      <div class="footer-brand">
+        <img src="images\logo.jpeg" alt="logo">
+        <div>
+          <h3>SS Avira Design</h3>
+          <p>Your Space. Our Design.</p>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="howitworks.html">How it works</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>Full Home Interiors</li>
+        <li>Kitchen Design</li>
+        <li>Wardrobe Design</li>
+        <li>Bath Space</li>
+      </ul>
+    </div>
+
+    <!-- QUICK RESPONSES -->
+    <div class="footer-col">
+      <h4>Quick Responses</h4>
+      <ul>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Pricing%20details" target="_blank">Pricing Details</a></li>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Book%20consultation" target="_blank">Book Consultation</a></li>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Show%20design%20ideas" target="_blank">Design Ideas</a></li>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Services%20info" target="_blank">Services Info</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📞 8792570652</p>
+      <p>📧 info@ssaviradesign.com</p>
+      <p>📍 Your City, India</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 SS Avira Design. All Rights Reserved.
+  </div>
+</footer>
+<!-- WHATSAPP FLOAT BUTTON -->
+<div class="whatsapp-float" onclick="openWhatsApp()">
+  <i class="fa-brands fa-whatsapp"></i>
+</div>
+
+<script>
+const btn = document.querySelector('.whatsapp-float');
+
+document.addEventListener('mousemove', (e) => {
+  const moveX = (e.clientX - window.innerWidth) * 0.03;
+  const moveY = (e.clientY - window.innerHeight) * 0.03;
+
+  btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+function openWhatsApp() {
+  window.open(
+    "https://wa.me/918792570652?text=Hi%20I%20need%20interior%20design%20consultation",
+    "_blank"
+  );
+}
+</script>
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>

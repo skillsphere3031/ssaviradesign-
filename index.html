@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Avira Design</title>
+  <link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="nav-wrapper">
+    <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+   </div>
+    <!-- LEFT DECOR + LOGO -->
+    <div class="logo-section">
+  <img src="images/logo2.jpeg" class="logo" alt="logo">
+
+  <div class="logo-text-group">
+    <span class="logo-text">SS Avira Design</span>
+    <span class="logo-subline">Your space, our designs</span>
+  </div>
+</div>
+
+    <!-- CENTER LINKS -->
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#our designs">Our Designs</a>
+      <a href="howitworks.html">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- RIGHT BUTTON -->
+   <div class="nav-btn">
+  <a href="https://wa.me/918792570652?text=Hi%20I%20am%20interested%20in%20interior%20design%20consultation" target="_blank">
+    Book Consultation →
+  </a>
+</div>
+
+  </div>
+</header>
+<script>
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function () {
+    navLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+
+<section class="hero">
+
+  <!-- SLIDES -->
+  <div class="slider">
+
+    <div class="slide active">
+      <img src="images\hero1.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="images\hero2.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="images\hero3.jpg">
+    </div>
+
+  </div>
+
+  <!-- ARROWS -->
+  <div class="arrow left" onclick="prevSlide()">❮</div>
+  <div class="arrow right" onclick="nextSlide()">❯</div>
+
+  <!-- CONTENT -->
+  <div class="hero-content">
+    <h1>Home to beautiful interiors</h1>
+    <a href="#" class="hero-btn">Book Free Consultation</a>
+  </div>
+
+</section>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
+
+function prevSlide() {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+}
+
+/* AUTO SLIDE */
+setInterval(nextSlide, 4000);
+</script>
+
+<section class="inspiration">
+
+  <h2>Inspiration for home interior designs</h2>
+  <p>Give your home a new look with these interior design ideas curated for you</p>
+
+  <div class="inspiration-grid">
+
+    <!-- LEFT BIG -->
+    <div class="card big">
+      <img src="images\Living Room.jpg">
+      <span>Living Room</span>
+    </div>
+
+    <!-- RIGHT TOP -->
+    <div class="card small">
+      <img src="images\bedroom.jpg">
+      <span>Master Bedroom</span>
+    </div>
+
+    <!-- RIGHT BOTTOM -->
+    <div class="card small">
+      <img src="images\false seeling.jpg">
+      <span>False Ceiling</span>
+    </div>
+
+    <!-- SECOND ROW -->
+    <div class="card medium">
+      <img src="images\dining room.jpg">
+      <span>Dining</span>
+    </div>
+    <div class="card medium">
+      <img src="images\bathing.jpg">
+      <span>Bathroom</span>
+    </div>
+
+    <div class="card wide">
+      <img src="images\kitchen2.png">
+      <span>Kitchen</span>
+    </div>
+
+    <div class="card medium">
+      <img src="images\Wardrobe.jpg">
+      <span>Wardrobe</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="our-designs" id="our designs">
+
+  <h2>Explore Our Designs</h2>
+
+  <div class="slider-wrapper">
+    
+    <!-- LEFT ARROW -->
+    <button class="slide-btn left" onclick="slideLeft()">❮</button>
+
+    <!-- CARDS CONTAINER -->
+    <div class="card-slider" id="cardSlider">
+
+      <!-- CARD -->
+      <div class="service-card" onclick="openGallery('living')">
+        <img src="images\cart1.jpg">
+        <h3>Living Room</h3>
+        <p>Elegant living spaces</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('bedroom')">
+        <img src="images\cart2.jpg">
+        <h3>Bedroom</h3>
+        <p>Comfort & luxury</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('kitchen')">
+        <img src="images\cart3.jpg">
+        <h3>Kitchen</h3>
+        <p>Modern functionality</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('bath')">
+        <img src="images\cart4.jpg">
+        <h3>Bath Space</h3>
+        <p>Stylish bathrooms</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('kids')">
+        <img src="images\cart5.jpg">
+        <h3>Kids Room</h3>
+        <p>Fun & safe spaces</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('pooja')">
+        <img src="images\cart6.jpg">
+        <h3>Pooja Room</h3>
+        <p>Peaceful designs</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('dining')">
+        <img src="images\cart7.jpg">
+        <h3>Dining</h3>
+        <p>Modern dining spaces</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('office')">
+        <img src="images\cart8.jpg">
+        <h3>Home Office</h3>
+        <p>Work from home</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('staircase')">
+        <img src="images\cart9.jpg">
+        <h3>Staircase</h3>
+        <p>Smart design</p>
+        <span>→</span>
+      </div>
+
+      <div class="service-card" onclick="openGallery('duplex')">
+        <img src="images\cart10.jpg">
+        <h3>Duplex</h3>
+        <p>Luxury homes</p>
+        <span>→</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT ARROW -->
+    <button class="slide-btn right" onclick="slideRight()">❯</button>
+
+  </div>
+</section>
+<script>
+const slider = document.getElementById("cardSlider");
+
+function slideRight() {
+  slider.scrollBy({ left: 270, behavior: 'smooth' }); // move 1 card
+}
+
+function slideLeft() {
+  slider.scrollBy({ left: -270, behavior: 'smooth' });
+}
+
+/* OPEN GALLERY */
+function openGallery(category) {
+  window.location.href = "gallery.html?category=" + category;
+}
+</script>
+
+<section class="why-section">
+
+  <h2>Why choose us</h2>
+
+  <div class="why-slider-wrapper">
+    <div class="why-slider">
+
+      <!-- ORIGINAL SET -->
+      <div class="why-card"><i class="fa-solid fa-shield-halved"></i><p>Lifetime warranty</p></div>
+      <div class="why-card"><i class="fa-solid fa-calendar-check"></i><p>45-day move-in</p></div>
+      <div class="why-card"><i class="fa-solid fa-clipboard-check"></i><p>146 quality checks</p></div>
+      <div class="why-card"><i class="fa-solid fa-heart"></i><p>1,00,000+ homes</p></div>
+      <div class="why-card"><i class="fa-solid fa-city"></i><p>100+ cities</p></div>
+      <div class="why-card"><i class="fa-solid fa-box"></i><p>20L+ products</p></div>
+
+      <!-- DUPLICATE SET (IMPORTANT FOR LOOP) -->
+      <div class="why-card"><i class="fa-solid fa-shield-halved"></i><p>Lifetime warranty</p></div>
+      <div class="why-card"><i class="fa-solid fa-calendar-check"></i><p>45-day move-in</p></div>
+      <div class="why-card"><i class="fa-solid fa-clipboard-check"></i><p>146 quality checks</p></div>
+      <div class="why-card"><i class="fa-solid fa-heart"></i><p>1,00,000+ homes</p></div>
+      <div class="why-card"><i class="fa-solid fa-city"></i><p>100+ cities</p></div>
+      <div class="why-card"><i class="fa-solid fa-box"></i><p>20L+ products</p></div>
+
+    </div>
+  </div>
+
+</section>
+<section class="estimate-section">
+
+  <h2>
+    Get the estimate for your <span id="dynamicText">Full Home</span>
+  </h2>
+  <p>Calculate the approximate cost of doing up your home interiors</p>
+
+  <div class="estimate-container">
+
+    <!-- FULL HOME -->
+    <div class="estimate-card" onclick="changeText('Full Home')">
+      <div class="card-icon">
+        <i class="fa-solid fa-house"></i>
+      </div>
+      <h3>Full Home Interior</h3>
+      <p>Know the estimate price for your full home interiors</p>
+      <button>CALCULATE →</button>
+    </div>
+
+    <!-- KITCHEN -->
+    <div class="estimate-card" onclick="changeText('Kitchen')">
+      <div class="card-icon">
+        <i class="fa-solid fa-kitchen-set"></i>
+      </div>
+      <h3>Kitchen</h3>
+      <p>Get an approximate costing for your kitchen interior</p>
+      <button>CALCULATE →</button>
+    </div>
+
+    <!-- BATH SPACE -->
+    <div class="estimate-card" onclick="changeText('Bath Space')">
+      <div class="card-icon">
+        <i class="fa-solid fa-bath"></i>
+      </div>
+      <h3>Bath Space</h3>
+      <p>Get an estimate for your bathroom interiors</p>
+      <button>CALCULATE →</button>
+    </div>
+
+  </div>
+
+</section>
+<script>
+function changeText(text) {
+  document.getElementById("dynamicText").innerText = text;
+}
+</script>
+<!-- WHATSAPP FLOAT BUTTON -->
+<div class="whatsapp-float" onclick="openWhatsApp()">
+  <i class="fa-brands fa-whatsapp"></i>
+</div>
+
+<script>
+const btn = document.querySelector('.whatsapp-float');
+
+document.addEventListener('mousemove', (e) => {
+  const moveX = (e.clientX - window.innerWidth) * 0.03;
+  const moveY = (e.clientY - window.innerHeight) * 0.03;
+
+  btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+function openWhatsApp() {
+  window.open(
+    "https://wa.me/918792570652?text=Hi%20I%20need%20interior%20design%20consultation",
+    "_blank"
+  );
+}
+</script>
+
+<section class="about-section" id="about">
+
+  <!-- HEADING -->
+  <div class="about-header">
+    <h2>About Us</h2>
+    <p>Crafting interiors that reflect your personality</p>
+  </div>
+
+  <div class="about-container">
+
+    <!-- IMAGE -->
+    <div class="about-image">
+      <img src="images/about3.jpg" alt="Interior Design">
+    </div>
+
+    <!-- CONTENT CARD -->
+    <div class="about-content">
+      <h3>We Design Spaces That Reflect Your Style</h3>
+
+      <p>
+        At <strong>SS Avira Design</strong>, we transform your vision into elegant,
+        functional interiors. Our designs blend creativity, comfort, and personality —
+        turning spaces into meaningful homes.
+      </p>
+
+      <span>Your Space. Our Design.</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="faq-section">
+  <div class="container">
+
+    <h2 class="faq-title">FAQs About SS Avira Design</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        1. Why do I need an interior designer?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          At SS Avira Design, we help transform your vision into a functional and elegant space.
+          Our expertise ensures better planning, cost optimization, and a beautifully designed home.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        2. Why choose SS Avira Design?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          We combine creativity, comfort, and personalization. Every design reflects your personality
+          while maintaining premium quality and modern aesthetics.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        3. What services do you provide?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          We offer full home interiors, kitchen design, wardrobe design, bath spaces,
+          and complete customized interior solutions.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        4. How much does interior design cost?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Costs depend on your space, materials, and customization level.
+          Contact SS Avira Design for a personalized estimate.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        5. What are the timelines for project completion?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Most projects are completed within 4–8 weeks depending on size and complexity.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        6. What are trending interior design styles?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <ul>
+          <li>Modern Style</li>
+          <li>Minimalist Design</li>
+          <li>Luxury Contemporary</li>
+          <li>Scandinavian</li>
+          <li>Indian Traditional</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+const faqs = document.querySelectorAll(".faq-question");
+
+faqs.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+
+    // close others (optional like Livspace)
+    document.querySelectorAll(".faq-item").forEach(el => {
+      if (el !== item) el.classList.remove("active");
+    });
+
+    item.classList.toggle("active");
+  });
+});
+</script>
+<section class="cta-split">
+  <div class="cta-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="cta-image">
+      <img src="images/sofa.jpg" alt="Interior Design">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="cta-text">
+      <h2>Your dream home is just a click away</h2>
+      <p>
+        Let SS Avira Design transform your space into something elegant,
+        functional, and uniquely yours.
+      </p>
+
+      <a href="https://wa.me/918792570652?text=Hi%20SS%20Avira%20Design,%20I%20want%20to%20book%20a%20consultation"
+         target="_blank"
+         class="cta-btn">
+        GET STARTED →
+      </a>
+    </div>
+
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col brand">
+      <div class="footer-brand">
+        <img src="images\logo.jpeg" alt="logo">
+        <div>
+          <h3>SS Avira Design</h3>
+          <p>Your Space. Our Design.</p>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="howitworks.html">How it works</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>Full Home Interiors</li>
+        <li>Kitchen Design</li>
+        <li>Wardrobe Design</li>
+        <li>Bath Space</li>
+      </ul>
+    </div>
+
+    <!-- QUICK RESPONSES -->
+    <div class="footer-col">
+      <h4>Quick Responses</h4>
+      <ul>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Pricing%20details" target="_blank">Pricing Details</a></li>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Book%20consultation" target="_blank">Book Consultation</a></li>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Show%20design%20ideas" target="_blank">Design Ideas</a></li>
+        <li><a href="https://wa.me/918792570652?text=Hi,%20Services%20info" target="_blank">Services Info</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📞 8792570652</p>
+      <p>📧 info@ssaviradesign.com</p>
+      <p>📍 Your City, India</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 SS Avira Design. All Rights Reserved.
+  </div>
+</footer>
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    
+    <span class="close-btn" onclick="closePopup()">×</span>
+    
+    <h2>Explore Our Designs ✨</h2>
+    <p>Check out our beautiful interior collections in the <b>Explore section</b>.</p>
+    
+    <a href="#our designs" class="popup-btn">View Designs</a>
+    
+  </div>
+</div>
+<script>
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+/* OPTIONAL: show only once */
+window.onload = function () {
+  if (!localStorage.getItem("popupShown")) {
+    document.getElementById("popup").style.display = "flex";
+    localStorage.setItem("popupShown", "true");
+  } else {
+    document.getElementById("popup").style.display = "none";
+  }
+};
+</script>
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>
