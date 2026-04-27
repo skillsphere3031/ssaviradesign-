@@ -495,13 +495,91 @@
     display: flex;
   }
 }
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  width: 40px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.nav-btn a {
+  background: #c8a165;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* MENU ICON */
+.menu-toggle {
+  display: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}
 </style>
 </head>
 
 <body>
   <header class="navbar">
   <div class="nav-wrapper">
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <!-- LEFT DECOR + LOGO -->
     <div class="logo-section">
   <img src="images/logo2.jpeg" class="logo" alt="logo">
@@ -511,7 +589,7 @@
     <span class="logo-subline">Your space, our designs</span>
   </div>
 </div>
-
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <!-- CENTER LINKS -->
     <nav class="nav-links" id="navLinks">
      <a href="index.html">Home</a>
@@ -732,7 +810,7 @@ navLinks.forEach(link => {
     <!-- BRAND -->
     <div class="footer-col brand">
       <div class="footer-brand">
-        <img src="images\logo.jpeg" alt="logo">
+        <img src="images\logo2.jpeg" alt="logo">
         <div>
           <h3>SS Avira Design</h3>
           <p>Your Space. Our Design.</p>
@@ -784,8 +862,8 @@ navLinks.forEach(link => {
     <div class="footer-col">
       <h4>Contact</h4>
       <p>📞 8792570652</p>
-      <p>📧 info@ssaviradesign.com</p>
-      <p>📍 Your City, India</p>
+      <p>📧 sreessai869@gmail.com</p>
+      <p>📍 Bangalore, India</p>
     </div>
 
   </div>
@@ -814,6 +892,11 @@ function openWhatsApp() {
     "https://wa.me/918792570652?text=Hi%20I%20need%20interior%20design%20consultation",
     "_blank"
   );
+}
+</script>
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
 }
 </script>
 <script>

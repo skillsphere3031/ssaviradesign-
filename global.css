@@ -1049,23 +1049,85 @@
 /* Mobile (max 768px) */
 @media (max-width: 768px) {
 
-  /* Navbar fix */
-  .nav-wrapper {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    text-align: center;
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  width: 40px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.nav-btn a {
+  background: #c8a165;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* MENU ICON */
+.menu-toggle {
+  display: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-btn {
-    margin-top: 10px;
+    display: none;
   }
+}
 
   /* Hero section */
   .hero-content h1 {
